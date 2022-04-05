@@ -15,6 +15,8 @@ end;
 /
 create or replace package body cliente is
 
+  c_tipoPessoaFisica constant number := 1;
+  c_tipoPessoaJuridica constant number := 2;
   
 end;
 /
