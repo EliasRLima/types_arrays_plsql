@@ -1,27 +1,34 @@
-create or replace procedure AdicionarCliente(p_nomecliente in varchar2,
+create or replace procedure AdicionarCliente(p_id in number,
+                                             p_nomecliente in varchar2,
                                              p_datanascimento in date,
                                              p_faturamentoanual in number,
                                              p_cpfcnpj in varchar2,
-                                             p_tipopessoa in integer) is
+                                             p_tipopessoa in integer,
+                                             p_tab_clientes_atualizada in out cliente.typ_tab_cliente) is
                                              
-    v_cliente cliente.typ_tab_cliente;
+    v_cliente cliente.typ_cliente;
+    V_ultimo cliente.typ_cliente;
+    v_idcliente pls_integer := p_id;
+    
 begin
-    v_cliente.DELETE;
-    v_cliente(1).id  := seq_id_cliente.nextval;
-    v_cliente(1).nomecliente := p_nomecliente;
-    v_cliente(1).datanascimento := p_datanascimento;
-    v_cliente(1).faturamentoanual := p_faturamentoanual;
-    v_cliente(1).cpfcnpj  := p_cpfcnpj;
-    v_cliente(1).tipopessoa  := p_tipopessoa;
+    v_cliente.idcliente  := v_idcliente;
+    v_cliente.nomecliente := p_nomecliente;
+    v_cliente.datanascimento := p_datanascimento;
+    v_cliente.faturamentoanual := p_faturamentoanual;
+    v_cliente.cpfcnpj  := p_cpfcnpj;
+    v_cliente.tipopessoa  := p_tipopessoa;
     
     begin
       validarCliente(v_cliente);
+      
     exception
       when cliente.e_validacao then
         dbms_output.put_line('Cliente nao sera adicionado por falha na validacao.');
+        return;
       when others then
         dbms_output.put_line('Erro desconhecido ao validar cliente.');
+        return;
     end;
-        
+    p_tab_clientes_atualizada(v_idcliente) := v_cliente;
 end;
 /

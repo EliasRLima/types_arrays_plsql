@@ -2,7 +2,7 @@ create or replace package cliente is
 
   -- Author  : elias
   
-  type typ_cliente is record (id  pls_integer,
+  type typ_cliente is record (idcliente  pls_integer,
                               nomecliente varchar2(1000),
                               datanascimento date,
                               faturamentoanual number,
