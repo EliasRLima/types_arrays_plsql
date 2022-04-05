@@ -19,8 +19,10 @@ begin
     exception
       when cliente.e_validacao then
         dbms_output.put_line('Cliente nao sera adicionado por falha na validacao.');
+        return;
       when others then
         dbms_output.put_line('Erro desconhecido ao validar cliente.');
+        return;
     end;
         
 end;
