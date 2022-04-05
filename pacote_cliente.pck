@@ -1,5 +1,5 @@
 create or replace package cliente is
-
+  
   -- Author  : elias
   
   type typ_cliente is record (idcliente  pls_integer,
@@ -15,12 +15,13 @@ create or replace package cliente is
   c_tipoPessoaJuridica constant number := 2;
   
   e_validacao EXCEPTION;
+  
+  type t_cursor is ref cursor;
 
 end;
 /
 create or replace package body cliente is
 
-  
   
 end;
 /

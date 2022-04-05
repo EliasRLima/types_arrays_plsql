@@ -15,7 +15,7 @@ begin
     v_cliente.nomecliente := p_nomecliente;
     v_cliente.datanascimento := p_datanascimento;
     v_cliente.faturamentoanual := p_faturamentoanual;
-    v_cliente.cpfcnpj  := p_cpfcnpj;
+    v_cliente.cpfcnpj  := replace(replace(p_cpfcnpj,'-',''),'.','');
     v_cliente.tipopessoa  := p_tipopessoa;
     
     begin

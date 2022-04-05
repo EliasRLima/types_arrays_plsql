@@ -1,6 +1,6 @@
 create or replace procedure AdicionarCliente(p_id in number,
                                              p_nomecliente in varchar2,
-                                             p_datanascimento in date,
+                                             p_datanascimento in varchar2,
                                              p_faturamentoanual in number,
                                              p_cpfcnpj in varchar2,
                                              p_tipopessoa in integer,
@@ -13,9 +13,9 @@ create or replace procedure AdicionarCliente(p_id in number,
 begin
     v_cliente.idcliente  := v_idcliente;
     v_cliente.nomecliente := p_nomecliente;
-    v_cliente.datanascimento := p_datanascimento;
+    v_cliente.datanascimento := to_date(p_datanascimento,'dd/mm/yyyy');
     v_cliente.faturamentoanual := p_faturamentoanual;
-    v_cliente.cpfcnpj  := p_cpfcnpj;
+    v_cliente.cpfcnpj  := replace(replace(replace(p_cpfcnpj,'/',''),'-',''),'.','');
     v_cliente.tipopessoa  := p_tipopessoa;
     
     begin
