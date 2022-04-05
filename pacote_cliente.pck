@@ -10,13 +10,15 @@ create or replace package cliente is
                               tipopessoa  integer);
    
   type typ_tab_cliente is table of typ_cliente index by pls_integer;
+  
+  c_tipoPessoaFisica constant number := 1;
+  c_tipoPessoaJuridica constant number := 2;
 
 end;
 /
 create or replace package body cliente is
 
-  c_tipoPessoaFisica constant number := 1;
-  c_tipoPessoaJuridica constant number := 2;
+  
   
 end;
 /
