@@ -13,6 +13,8 @@ create or replace package cliente is
   
   c_tipoPessoaFisica constant number := 1;
   c_tipoPessoaJuridica constant number := 2;
+  
+  e_validacao EXCEPTION;
 
 end;
 /
