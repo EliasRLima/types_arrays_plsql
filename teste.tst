@@ -1,9 +1,8 @@
 PL/SQL Developer Test script 3.0
-63
+60
 -- Created on 05/04/2022 by elias
 declare 
   v_lista_clientes cliente.typ_tab_cliente := cliente.typ_tab_cliente();
-  v_tabela_clientes typ_tab_cliente_obj;
 begin
   
   v_lista_clientes.delete;
@@ -45,21 +44,19 @@ begin
                    p_faturamentoanual        => 0,
                    p_cpfcnpj                 => '614.579.220-53',
                    p_tipopessoa              => cliente.c_tipoPessoaFisica,
-                   p_tab_clientes_atualizada => v_lista_clientes);  
-                   
-   v_tabela_clientes := cliente.fnc_retorna_colecao(v_lista_clientes); 
+                   p_tab_clientes_atualizada => v_lista_clientes);   
                    
    dbms_output.put_line('Sem ordem.');
-   RetornarClientes(p_tab_clientes => v_tabela_clientes);  
+   RetornarClientes(p_tab_clientes => v_lista_clientes);  
    
    dbms_output.put_line('Por nome.');
-   RetornarClientes(p_tab_clientes => v_tabela_clientes, p_order_nome => 1);  
+   RetornarClientes(p_tab_clientes => v_lista_clientes, p_order_nome => 1);  
    
    dbms_output.put_line('Por faturamento.');
-   RetornarClientes(p_tab_clientes => v_tabela_clientes, p_order_faturamento => 1);  
+   RetornarClientes(p_tab_clientes => v_lista_clientes, p_order_faturamento => 1);  
    
    dbms_output.put_line('Por nome e faturamento.');
-   RetornarClientes(p_tab_clientes => v_tabela_clientes, p_order_nome => 1, p_order_faturamento => 1);      
+   RetornarClientes(p_tab_clientes => v_lista_clientes, p_order_nome => 1, p_order_faturamento => 1);      
 
   
 end;
