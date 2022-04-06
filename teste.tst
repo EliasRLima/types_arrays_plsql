@@ -48,7 +48,7 @@ begin
                    p_tab_clientes_atualizada => v_lista_clientes);  
                    
    v_tabela_clientes := cliente.fnc_retorna_colecao(v_lista_clientes); 
-                   
+                    
    dbms_output.put_line('Sem ordem.');
    RetornarClientes(p_tab_clientes => v_tabela_clientes);  
    

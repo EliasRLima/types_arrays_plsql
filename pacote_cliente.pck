@@ -25,7 +25,7 @@ end;
 create or replace package body cliente is
 
   function fnc_monta_colecao(r typ_cliente) return typ_cliente_obj is
-  begin
+  begin 
     return typ_cliente_obj(r.idcliente,
                            r.nomecliente,
                            r.datanascimento,

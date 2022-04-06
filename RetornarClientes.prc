@@ -6,7 +6,7 @@ create or replace procedure RetornarClientes(p_tab_clientes in typ_tab_cliente_o
   v_cliente cliente.typ_cliente;
   v_cursor cliente.t_cursor;
 
-begin
+begin 
   
   if p_order_nome <> 0 and p_order_faturamento <> 0 then
     open v_cursor for select * from table(cast( p_tab_clientes as typ_tab_cliente_obj)) p order by nomecliente, faturamentoanual;
