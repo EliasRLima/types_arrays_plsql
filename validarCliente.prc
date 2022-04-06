@@ -1,7 +1,7 @@
 create or replace noneditionable procedure validarCliente(p_cliente in cliente.typ_cliente) is
 
   e_validacao EXCEPTION;
-begin
+begin 
   if p_cliente.tipopessoa = cliente.c_tipoPessoaFisica then
     if p_cliente.nomecliente is null then
       dbms_output.put_line('O nome de pessoas fisicas é obrigatorio.');

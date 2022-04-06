@@ -7,7 +7,7 @@ create or replace procedure RetornarClientes(p_tab_clientes in cliente.typ_tab_c
   v_cursor cliente.t_cursor;
   v_cursor2 cliente.typ_tab_cliente;
 
-begin
+begin 
   
   v_sql := 'select * 
             from table(cast(p_tab_clientes as cliente.typ_cliente)) p';

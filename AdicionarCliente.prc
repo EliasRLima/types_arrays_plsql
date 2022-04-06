@@ -10,7 +10,7 @@ create or replace procedure AdicionarCliente(p_id in number,
     V_ultimo cliente.typ_cliente;
     v_idcliente pls_integer := p_id;
     
-begin
+begin 
     v_cliente.idcliente  := v_idcliente;
     v_cliente.nomecliente := p_nomecliente;
     v_cliente.datanascimento := to_date(p_datanascimento,'dd/mm/yyyy');
