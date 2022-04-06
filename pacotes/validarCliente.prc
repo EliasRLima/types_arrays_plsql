@@ -1,4 +1,4 @@
-create or replace noneditionable procedure validarCliente(p_cliente in cliente.typ_cliente) is
+create or replace procedure validarCliente(p_cliente in cliente.typ_cliente) is
 
   e_validacao EXCEPTION;
 begin 
