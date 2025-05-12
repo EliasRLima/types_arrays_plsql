@@ -1,6 +1,6 @@
-# teste_plsql_ailo
+# plsql
 
-Trabalhando com Types e Arrays em PL/SQL em Projeto feito para o teste da empresa Ailos.
+Trabalhando com Types e Arrays em PL/SQ.
 
 Saida da .tst:
 ![resultado](https://github.com/EliasRLima/teste_plsql_ailos/blob/master/imgs/resultado_teste.PNG)
